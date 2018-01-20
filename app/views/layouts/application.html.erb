@@ -34,7 +34,8 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container">
-        <a class="navbar-brand" href="#">Start Bootstrap</a>
+        <a class="navbar-brand" href="#"></a>
+        <%= link_to "Instagram", root_url, class: "navbar-brand" %>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -46,14 +47,17 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
+              <%= link_to "New Post", new_post_path %>
+            </li>
+            <% if current_user %>
+            <% else %>
+            <li class="nav-item">
+              <%= link_to "Login", new_user_session_path %>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Services</a>
+              <%= link_to "Register", new_user_registration_path %>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
+            <% end %>
           </ul>
         </div>
       </div>
