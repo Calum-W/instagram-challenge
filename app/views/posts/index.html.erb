@@ -5,7 +5,7 @@
         <div><%= image_tag post.image.url(:medium) %></div>
         <div><%= link_to post.user.username, user_path(post.user) %>: </div>
         <div><%= post.description %></div>
-        <% if post.user = current_user %>
+        <% if post.user == current_user %>
             <div><%= link_to 'Edit', edit_post_path(post) %></div>
             <div><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></div>
         <% end %>
