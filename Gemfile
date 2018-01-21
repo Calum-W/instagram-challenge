@@ -9,6 +9,8 @@ gem 'devise'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'jquery-rails'
 gem "paperclip", "~> 5.0.0"
+gem "rubocop", "0.48.1"
+gem "rubocop-rails"
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'
 # Use sqlite3 as the database for Active Record
