@@ -1,8 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
-
-<table>
+<table class="images-table">
   <thead>
     <tr>
       <th colspan="3"></th>
@@ -14,16 +12,15 @@
       <tr>
         <td><%= image_tag post.image.url(:medium) %></td>
         <br>
+        <td><%= link_to post.user.username, user_path(post.user) %>: </td>
         <td><%= post.description %></td>
         <% if post.user = current_user %>
-          <td><%= link_to 'Edit', edit_post_path(post) %></td>
-          <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <tr>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
         <% end %>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Post', new_post_path %>
